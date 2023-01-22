@@ -23,6 +23,7 @@ app.get('/cookie-needed', (req, res) => {
     res.send(req.cookies.length ? 'cookies sent' : "cookies not sent");
 });
 app.use(express.static('public'));
-app.listen(3002, () => {
-    console.log('app listens on 3002');
+const port = process.env.PORT || 3002;
+app.listen(port, () => {
+    console.log('app listens on ' + port);
 });
