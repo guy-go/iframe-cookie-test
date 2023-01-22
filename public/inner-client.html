@@ -13,7 +13,7 @@
   </body>
   <script>
     function fetchData() {
-        fetch('http://localhost:3002/cookie-needed', {
+        fetch('/cookie-needed', {
             headers: {
                 "credentials": "include"
             }
@@ -21,7 +21,7 @@
     }
 
     function setCookie(){
-        fetch("http://localhost:3002/set-cookie", {
+        fetch("/set-cookie", {
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
