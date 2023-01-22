@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    inner client
+    <button onclick="setCookie()">set cookie</button>
+    <button onclick="fetchData()">fetch data</button>
+  </body>
+  <script>
+    function fetchData() {
+        fetch('http://localhost:3002/cookie-needed', {
+            headers: {
+                "credentials": "include"
+            }
+        });
+    }
+
+    function setCookie(){
+        fetch("http://localhost:3002/set-cookie", {
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "credentials": "include"
+      },
+      method: "post",
+      body: JSON.stringify({
+        yay: "yoog",
+      }),
+    })
+      .then(res => res.json())
+      .then(data => console.log(data));
+    }
+
+  </script>
+</html>
