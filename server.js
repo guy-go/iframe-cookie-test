@@ -11,9 +11,9 @@ app.use(cors({
 
 app.post('/set-cookie', (req, res) => {
     res.cookie('mycoooo', "cooookiee data", {
-        sameSite: "Lax",
+        sameSite: "None",
         maxAge: 1000 * 60 * 5, // 5 mins
-        // secure: true,
+        secure: true,
     });
     res.json({ result: 'yay'});
 });
